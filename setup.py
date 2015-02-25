@@ -7,7 +7,7 @@ setup(
     author='Phil Rosenfield',
     author_email='philrosenfield@gmail.com',
     url='https://github.com/philrosenfield/ascii2hdf5',
-    version='1.1',
+    version='1.2',
     py_modules=['ascii2hdf5'],
     scripts=['ascii2hdf5']
 )

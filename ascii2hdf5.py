@@ -18,8 +18,12 @@ def ascii2hdf5(inputfile, outputfile, clobber=False, overwrite=True,
         print('converting {} to {}'.format(inputfile, outputfile))
     
     tbl = ascii.read(inputfile)
-    tbl.write(outputfile, format='hdf5', path='data', compression=True,
-              overwrite=overwrite)
+    try:
+        tbl.write(outputfile, format='hdf5', path='data', compression=True,
+                  overwrite=overwrite)
+    except:
+        print('problem with {}'.format(inputfile))
+        return
 
     if clobber:
         os.remove(inputfile)
