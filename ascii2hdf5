@@ -1,0 +1,36 @@
+#!/usr/bin/env python
+
+import argparse
+import sys
+
+from ascii2hdf5 import replace_ext
+from ascii2hdf5 import ascii2hdf5
+
+
+def main(argv):
+    """Main function for the ascii2hdf5 script """
+
+    parser = argparse.ArgumentParser(description="Convert ascii file to hdf5")
+
+    parser.add_argument('-f', '--force', action='store_true',
+                        help='overwrite if hdf5 file exists')
+
+    parser.add_argument('-c', '--clobber', action='store_true',
+                        help='remove input ascii file')
+
+    parser.add_argument('-o', '--output', type=str, default=None,
+                        help='output file name: if not set, uses inputfile name')
+
+    parser.add_argument('name', nargs='*', type=str, help='ascii file(s) to convert')
+
+    args = parser.parse_args(argv)
+
+    assert os.path.isfile(args.name), '{} not found'.format(args.name)
+
+    if args.output is None:
+        args.output = replace_ext(args.name, '.hdf5')
+    
+    ascii2hdf5(args.name, args.output, clobber=args.clobber, overwrite=args.force)
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
