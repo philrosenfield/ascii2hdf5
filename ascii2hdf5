@@ -6,7 +6,6 @@ import sys
 from ascii2hdf5 import replace_ext
 from ascii2hdf5 import ascii2hdf5
 
-
 def main(argv):
     """Main function for the ascii2hdf5 script """
 
