@@ -6,7 +6,8 @@ setup(
     name='ascii2hdf5',
     author='Phil Rosenfield',
     author_email='philrosenfield@gmail.com',
-    version='0.1',
+    url='https://github.com/philrosenfield/ascii2hdf5',
+    version='1.1',
     py_modules=['ascii2hdf5'],
     scripts=['ascii2hdf5']
 )
