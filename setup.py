@@ -6,6 +6,7 @@ setup(
     name='ascii2hdf5',
     author='Phil Rosenfield',
     author_email='philrosenfield@gmail.com',
+    description='Command line tool to convert ascii table to hdf5',
     url='https://github.com/philrosenfield/ascii2hdf5',
     version='1.3',
     py_modules=['ascii2hdf5'],
